@@ -67,4 +67,13 @@ function Dashboard() {
         })}
       </div>
 
+      {/* Chart placeholder */}
+      <h2 className="text-lg font-semibold text-gray-800 mb-4">7-Day Trend — Home Location</h2>
+      <div className="border border-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-400 bg-white">
+        [ Chart.js line chart goes here — Step 10 ]
+      </div>
+    </div>
+  );
+}
+
 export default Dashboard;
