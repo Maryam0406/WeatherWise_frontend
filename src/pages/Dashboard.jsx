@@ -39,4 +39,32 @@ function Dashboard() {
         ))}
       </div>
 
+      {/* Trips */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-lg font-semibold text-gray-800">My Trips</h2>
+        <Link
+          to="/trips/new"
+          className="bg-blue-100 text-blue-600 text-sm px-4 py-2 rounded hover:bg-blue-200"
+        >
+          + New Trip
+        </Link>
+      </div>
+      <div className="flex flex-col gap-3 mb-8">
+        {mockTrips.map((trip) => {
+          const packedCount = trip.packingItems.filter((p) => p.is_packed).length;
+          return (
+            <Link
+              key={trip.id}
+              to={`/trips/${trip.id}`}
+              className="bg-green-50 border border-green-100 rounded-lg p-4 hover:shadow-md transition flex justify-between"
+            >
+              <span className="font-medium text-gray-800">{trip.name}</span>
+              <span className="text-sm text-gray-500">
+                {trip.start_date} - {trip.end_date} | Packing: {packedCount}/{trip.packingItems.length}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+
 export default Dashboard;
