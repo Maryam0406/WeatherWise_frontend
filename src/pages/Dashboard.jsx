@@ -10,4 +10,12 @@ function Dashboard() {
         </p>
       </div>
 
+      {/* Stat cards */}
+      <div className="grid grid-cols-4 gap-4 mb-8">
+        <StatCard label="Saved Locations" value={mockLocations.length} />
+        <StatCard label="Upcoming Trips" value={mockTrips.length} />
+        <StatCard label="Home Now" value={mockLocations[0]?.weather ?? '—'} />
+        <StatCard label="Role" value={mockUser.role} />
+      </div>
+
 export default Dashboard;
