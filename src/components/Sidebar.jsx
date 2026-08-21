@@ -7,14 +7,14 @@ const navItems = [
     { label: 'Profile', path: '/profile' },
 ];
 
-function Sidebar{} {
+function Sidebar() {
     return (
         <aside className="w-56 bg-slate-800 text-white min-h-screen p-4 flex flex-col">
             <h1 className="text-xl font-bold mb-1">WeatherWise</h1>
             <p className="text-xs text-slate-400 mb-8">Trip planning</p>
 
             <nav className="flex flex-col gap-1" aria-label="Main Navigation">
-                {navItems.map((item) => {
+                {navItems.map((item) => (
                     <NavLink
                     key={item.path}
                     to={item.path}
@@ -26,7 +26,7 @@ function Sidebar{} {
                     >
                         {item.label}
                     </NavLink>    
-                })}
+                ))}
             </nav>  
 
             <button
