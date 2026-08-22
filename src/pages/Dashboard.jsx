@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { mockUser, mockLocations, mockTrips } from '../data/mockData';
+import { mockUser, mockLocations, mockTrips, mockForecast } from '../data/mockData';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -8,7 +8,6 @@ import {
   PointElement,
   Tooltip,
 } from 'chart.js';
-import { mockUser, mockLocations, mockTrips, mockForecast } from '../data/mockData';
 
 ChartJS.register(
   CategoryScale,
