@@ -88,7 +88,25 @@ function Dashboard() {
       {/* Chart placeholder */}
       <h2 className="text-lg font-semibold text-gray-800 mb-4">7-Day Trend — Home Location</h2>
       <div className="border border-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-400 bg-white">
-        [ Chart.js line chart goes here — Step 10 ]
+        <Line
+          data={{
+            labels: mockForecast.map((f) => f.day),
+            datasets: [
+              {
+                label: 'Temperature (°C)',
+                data: mockForecast.map((f) => f.temp),
+                borderColor: '#4A90D9',
+                backgroundColor: '4A90D9',
+                tension: 0.3,
+              },
+            ],
+          }}
+
+          options={{
+            responsive: true,
+            plugins: { legend: { display: false } },
+          }}
+        />  
       </div>
     </div>
   );
