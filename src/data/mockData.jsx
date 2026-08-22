@@ -47,3 +47,14 @@ export const mockTrips = [
     activities: [],
   },
 ];
+
+//mock 7 day forecast for chart.js
+export const mockForecast = [
+  { day: 'Mon', temp: 27 },
+  { day: 'Tue', temp: 28 },
+  { day: 'Wed', temp: 26 },
+  { day: 'Thu', temp: 29 },
+  { day: 'Fri', temp: 30 },
+  { day: 'Sat', temp: 28 },
+  { day: 'Sun', temp: 27 }, 
+];

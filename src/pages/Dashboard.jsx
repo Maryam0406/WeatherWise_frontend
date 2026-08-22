@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+import { mockUser, mockLocations, mockTrips } from '../data/mockData';
+
 function Dashboard() {
   return (
     <div className="p-8">
-      {/*Top Bar*/}
+      {/* Top bar */}
       <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-200">
         <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
         <p className="text-sm text-gray-500">
@@ -72,6 +74,15 @@ function Dashboard() {
       <div className="border border-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-400 bg-white">
         [ Chart.js line chart goes here — Step 10 ]
       </div>
+    </div>
+  );
+}
+
+function StatCard({ label, value }) {
+  return (
+    <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+      <p className="text-2xl font-bold text-gray-800">{value}</p>
+      <p className="text-sm text-gray-500">{label}</p>
     </div>
   );
 }
