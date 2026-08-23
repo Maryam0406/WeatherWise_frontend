@@ -79,3 +79,17 @@ const [formData, setFormData] = useState({
       /> 
     </div>
   </div>
+
+  <div>
+    <label htmlFor="notes" className="block text-sm font-semibold text-gray-600 mb-1">
+      Notes (optional)
+    </label>
+    <textarea
+      id="notes"
+      name="notes"
+      value={formData.notes}
+      onChange={handleChange}
+      rows={3}
+      className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+    />
+  </div>
