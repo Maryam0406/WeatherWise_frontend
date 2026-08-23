@@ -6,6 +6,7 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
+  LineElement,
   Tooltip,
 } from 'chart.js';
 
@@ -13,6 +14,7 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
+  LineElement,
   Tooltip
 );
 
@@ -86,7 +88,7 @@ function Dashboard() {
 
       {/* Chart placeholder */}
       <h2 className="text-lg font-semibold text-gray-800 mb-4">7-Day Trend — Home Location</h2>
-      <div className="border border-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-400 bg-white">
+      <div className="border border-gray-200 rounded-lg p-4 bg-white">
         <Line
           data={{
             labels: mockForecast.map((f) => f.day),
@@ -95,7 +97,7 @@ function Dashboard() {
                 label: 'Temperature (°C)',
                 data: mockForecast.map((f) => f.temp),
                 borderColor: '#4A90D9',
-                backgroundColor: '4A90D9',
+                backgroundColor: '#4A90D9',
                 tension: 0.3,
               },
             ],
