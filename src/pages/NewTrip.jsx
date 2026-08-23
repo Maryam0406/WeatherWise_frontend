@@ -50,4 +50,32 @@ const [formData, setFormData] = useState({
   </select>
   </div>
 
-  
+  <div className="flex gap-4">
+    <div className="flex-1">
+      <label htmlFor="startDate" className="block text-sm font-semibold text-gray-600 mb-1">
+        Start Date
+      </label>
+      <input
+        id="StartData"
+        name="startDate"
+        type="date"
+        value={formData.startDate}
+        onChange={handleChange}
+        className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+      /> 
+    </div>
+
+    <div className="flex-1">
+      <label htmlFor="endDate" className="block text-sm font-semibold text-gray-600 mb-1">
+        End Date
+      </label>
+      <input
+        id="endDate"
+        name="endDate"
+        type="date"
+        value={formData.endDate}
+        onChange={handleChange}
+        className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+      /> 
+    </div>
+  </div>
