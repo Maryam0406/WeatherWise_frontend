@@ -46,6 +46,18 @@ function LocationDetail() {
         ))}
       </div>
 
-
-
+      <div className="flex gap-3">
+        <Link
+          to="/trips/new"
+          className="bg-blue-500 text-white text-sm px-5 py-3 rounded hover:bg-blue-600"
+        >
+          + Plan a Trip
+        </Link>  
+        <button className="border border-gray-300 text-gray-600 text-sm px-5 py-3 rounded hover:bg-gray-50">
+          Remove Location
+        </button>
+      </div>
+    </div>
+  );
+}    
 export default LocationDetail;
