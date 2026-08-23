@@ -1,10 +1,13 @@
 import { useState } from 'react';
 
+function NewTrip() {
+    const navigate = useNavigate();
+
 const [formData, setFormData] = useState({
     name: '',
-    location_id: '',
-    start_date: '',
-    end_date: '',
+    locationId: '',
+    startDate: '',
+    endDate: '',
     notes: '',
   });
 
@@ -13,6 +16,24 @@ const [formData, setFormData] = useState({
   function handleChange(e) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if ( !formData.name | ! formData.LocationId | !formData.startDate | !formData.endDate) {
+      setError('Please fill in all required fields.');
+      return;
+    }
+
+    if (formData.startDate > formData.endDate) {
+      setError('End date must be after start date.');
+      return;
+    }
+
+    setError('');
+    console.log('New trip submitted:', formData);
+    navigate('/dashboard');
   }
 
   <div>
@@ -56,7 +77,7 @@ const [formData, setFormData] = useState({
         Start Date
       </label>
       <input
-        id="StartData"
+        id="startDate"
         name="startDate"
         type="date"
         value={formData.startDate}
