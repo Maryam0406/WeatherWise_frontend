@@ -13,7 +13,16 @@ function TripDetail({ trips }) {
 
   return (
     <div className="p-8">
-      <h1>{trip.name}</h1>
+      <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-200">
+        <h1 className="text-2xl font-bold text-gray-800">Trip: {trip.name}</h1>
+      </div>
+
+      < div className="bg-blue-50 border border-blue-100 rounded-lg p-6 mb-8">
+        <p className="font-semibold text-gray-800">
+          {trip.start_date} - {trip.end_date}
+        </p>
+        <p className="text-sm text-gray-500 mt-1">{trip.forecast_summary}</p>
+        </div>
     </div>
   );
 }
