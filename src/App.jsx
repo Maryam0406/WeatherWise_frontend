@@ -16,6 +16,21 @@ function App() {
     setTrips((prev) => [...prev, newTrip]);
   }
 
+  function togglePackingItem(tripId, itemId) {
+    setTrips((prevTrips) =>
+      prevTrips.map((trip) => {
+        if (trip.id !== tripId) return trip; // not the trip we're editing — leave it unchanged
+
+        return {
+          ...trip,
+          packingItems: trip.packingItems.map((item) =>
+            item.id === itemId ? { ...item, is_packed: !item.is_packed } : item
+          ),
+        };
+      })
+    );
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -31,7 +46,7 @@ function App() {
           element={<AppLayout><NewTrip locations={locations} addTrip={addTrip} /></AppLayout>} />
         <Route
          path="/trips/:id"
-         element={<AppLayout><TripDetail trips={trips} /></AppLayout>} />
+         element={<AppLayout><TripDetail trips={trips} togglePackingItem={togglePackingItem} /></AppLayout>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
