@@ -5,13 +5,13 @@ export const mockUser = {
   role: "user",
 };
 
-export const mockLocations = [
+export const initialLocations = [
   { id: 1, label: "Home", city_name: "Colombo", latitude: 6.9271, longitude: 79.8612, weather: "30°C, Sunny" },
   { id: 2, label: "Work", city_name: "Kandy", latitude: 7.2906, longitude: 80.6337, weather: "26°C, Cloudy" },
   { id: 3, label: "Mom's House", city_name: "Galle", latitude: 6.0535, longitude: 80.2210, weather: "29°C, Rain" },
 ];
 
-export const mockTrips = [
+export const initialTrips = [
   {
     id: 1,
     name: "Weekend in Kandy",
@@ -28,8 +28,8 @@ export const mockTrips = [
       { id: 5, item_name: "Phone charger", is_packed: false, is_suggested: false },
     ],
     activities: [
-      { id: 1, activity_name: "Temple of the Tooth visit", scheduled_date: "2026-08-23T09:00:00" },
-      { id: 2, activity_name: "Lakeside dinner", scheduled_date: "2026-08-23T18:00:00" },
+      { id: 1, activity_name: "Temple of the Tooth visit", scheduled_date: "2026-08-23T09:00" },
+      { id: 2, activity_name: "Lakeside dinner", scheduled_date: "2026-08-23T18:00" },
     ],
   },
   {
@@ -48,13 +48,12 @@ export const mockTrips = [
   },
 ];
 
-//mock 7 day forecast for chart.js
 export const mockForecast = [
-  { day: 'Mon', temp: 27 },
-  { day: 'Tue', temp: 28 },
-  { day: 'Wed', temp: 26 },
-  { day: 'Thu', temp: 29 },
-  { day: 'Fri', temp: 30 },
-  { day: 'Sat', temp: 28 },
-  { day: 'Sun', temp: 27 }, 
+  { day: "Mon", temp: 27 },
+  { day: "Tue", temp: 28 },
+  { day: "Wed", temp: 26 },
+  { day: "Thu", temp: 29 },
+  { day: "Fri", temp: 30 },
+  { day: "Sat", temp: 28 },
+  { day: "Sun", temp: 27 },
 ];
