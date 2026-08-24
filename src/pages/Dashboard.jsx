@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { mockUser, mockLocations, mockTrips, mockForecast } from '../data/mockData';
+import { mockUser, mockForecast } from '../data/mockData';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,

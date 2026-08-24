@@ -5,16 +5,33 @@ import Dashboard from './pages/Dashboard';
 import LocationDetail from './pages/LocationDetail';
 import NewTrip from './pages/NewTrip';
 import TripDetail from './pages/TripDetail';
+import { useState } from 'react';
+import { mockLocations, mockTrips } from './data/mockData';
 
 function App() {
+  const [locations] = useState(mockLocations);
+  const [trips, setTrips] = useState(mockTrips);
+
+  function addTrip(newTrip) {
+    setTrips((prev) => [...prev, newTrip]);
+  }
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login/>} />
-        <Route path="/dashboard" element={<AppLayout><Dashboard/></AppLayout>} />
-        <Route path="/locations" element={<AppLayout><LocationDetail/></AppLayout>} />
-        <Route path="/trips/new" element={<AppLayout><NewTrip/></AppLayout>} />
-        <Route path="/trips/:id" element={<AppLayout><TripDetail/></AppLayout>} />
+        <Route
+          path="/dashboard" 
+          element={<AppLayout><Dashboard trips={trips} locations={locations} /></AppLayout>} />
+        <Route
+          path="/locations/:id"
+          element={<AppLayout><LocationDetail locations={locations} /></AppLayout>} />
+        <Route
+          path="/trips/new"
+          element={<AppLayout><NewTrip locations={locations} addTrip={addTrip} /></AppLayout>} />
+        <Route
+         path="/trips/:id"
+         element={<AppLayout><TripDetail trips={trips} /></AppLayout>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>

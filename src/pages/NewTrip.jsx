@@ -1,9 +1,8 @@
-// src/pages/NewTrip.jsx
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mockLocations } from '../data/mockData';
 
-function NewTrip() {
+function NewTrip({ locations, addTrip }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -34,7 +33,19 @@ function NewTrip() {
     }
 
     setError('');
-    console.log('New trip submitted (mock):', formData);
+
+    const newTrip = {
+      id: Date.now(),
+      name: formData.name,
+      location_id: Number(formData.locationId),
+      start_date: formData.startDate,
+      end_date: formData.endDate,
+      notes: formData.notes,
+      packingItems: [],
+      activities: [],
+    };
+
+    addTrip(newTrip);
     navigate('/dashboard');
   }
 
