@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { mockLocations } from '../data/mockData';
 
 function NewTrip({ locations, addTrip }) {
   const navigate = useNavigate();
@@ -12,7 +11,6 @@ function NewTrip({ locations, addTrip }) {
     endDate: '',
     notes: '',
   });
-
   const [error, setError] = useState('');
 
   function handleChange(e) {
@@ -41,6 +39,7 @@ function NewTrip({ locations, addTrip }) {
       start_date: formData.startDate,
       end_date: formData.endDate,
       notes: formData.notes,
+      forecast_summary: 'Forecast will appear once connected to live weather (Week 4)',
       packingItems: [],
       activities: [],
     };
@@ -50,7 +49,7 @@ function NewTrip({ locations, addTrip }) {
   }
 
   return (
-    <div className="p-8 max-w-2xl">
+    <div className="p-4 md:p-8 max-w-2xl">
       <h1 className="text-2xl font-bold text-gray-800 mb-8 pb-4 border-b border-gray-200">
         Plan a New Trip
       </h1>
@@ -89,7 +88,7 @@ function NewTrip({ locations, addTrip }) {
             className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
           >
             <option value="">Select a location...</option>
-            {mockLocations.map((loc) => (
+            {locations.map((loc) => (
               <option key={loc.id} value={loc.id}>
                 {loc.label} ({loc.city_name})
               </option>
@@ -97,7 +96,7 @@ function NewTrip({ locations, addTrip }) {
           </select>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label htmlFor="startDate" className="block text-sm font-semibold text-gray-600 mb-1">
               Start Date
