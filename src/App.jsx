@@ -7,7 +7,8 @@ import LocationDetail from './pages/LocationDetail';
 import NewTrip from './pages/NewTrip';
 import TripDetail from './pages/TripDetail';
 import { initialLocations, initialTrips } from './data/mockData';
-
+import TripsList from './pages/TripsList';
+import Profile from './pages/Profile';
 function App() {
   const [locations, setLocations] = useState(initialLocations);
   const [trips, setTrips] = useState(initialTrips);
@@ -142,6 +143,24 @@ function App() {
                 addActivity={addActivity}
                 deleteActivity={deleteActivity}
               />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/trips"
+          element={
+            <AppLayout>
+              <TripsList trips={trips} />
+            </AppLayout>
+          }
+        />
+        
+        <Route
+          path="/profile"
+          element={
+            <AppLayout>
+              <Profile locations={locations} trips={trips} />
             </AppLayout>
           }
         />

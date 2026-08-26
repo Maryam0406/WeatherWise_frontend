@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 const navItems = [
   { label: 'Dashboard', path: '/dashboard' },
   { label: 'Locations', path: '/locations/1' },
-  { label: 'Trips', path: '/dashboard' },
-  { label: 'Profile', path: '/dashboard' },
+  { label: 'Trips', path: '/trips' },
+  { label: 'Profile', path: '/profile' },
 ];
 
 function Sidebar() {
